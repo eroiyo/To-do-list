@@ -1,0 +1,30 @@
+body {
+  background-color: bisque;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: initial;
+  margin-block-start: initial;
+  margin-block-end: initial;
+  margin-inline-start: initial;
+  margin-inline-end: initial;
+  padding-inline-start: initial;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  display: flex;
+  text-decoration: none;
+}
+
+.to-do-list {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
