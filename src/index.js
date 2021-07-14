@@ -1,14 +1,7 @@
+import './style.css';
 import _ from 'lodash';
 
 const erase = document.querySelector('.erase-container');
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
 
 const todo = [
   {
@@ -35,12 +28,15 @@ class Todo {
   constructor() {
     this.todo = null;
   }
+
   setTodo(todolist) {
     this.todo = todolist;
   }
+
   getTodo() {
     return this.todo;
   }
+
   showall() {
     for (let i = 0; i < this.todo.length; i += 1) {
       const activity = this.todo[i];
@@ -77,15 +73,11 @@ class Todo {
       lastC.appendChild(last);
 
       container.appendChild(lastC);
-      console.log("fiesta")
+      console.log('fiesta');
       erase.parentNode.insertBefore(container, erase);
-
     }
   }
 }
-let list = new Todo();
+const list = new Todo();
 list.setTodo(todo);
-console.log(list);
 list.showall();
-
-import './style.css';
