@@ -1,5 +1,4 @@
 import './style.css';
-import _ from 'lodash';
 
 const erase = document.querySelector('.erase-container');
 
@@ -73,7 +72,6 @@ class Todo {
       lastC.appendChild(last);
 
       container.appendChild(lastC);
-      console.log('fiesta');
       erase.parentNode.insertBefore(container, erase);
     }
   }
