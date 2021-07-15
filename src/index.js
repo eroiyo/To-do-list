@@ -1,4 +1,6 @@
 import './style.css';
+import './status.js';
+import { uncheck,check } from './status.js';
 
 const erase = document.querySelector('.erase-container');
 
@@ -49,8 +51,10 @@ class Todo {
       status.classList.add('far');
       if (activity.completed === true) {
         status.classList.add('fa-check-square');
+        status.addEventListener('click', function a () {check(status,a)})
       } else {
         status.classList.add('fa-square');
+        status.addEventListener('click', function a () {uncheck(status,a)})
       }
       statusC.appendChild(status);
 
