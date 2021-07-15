@@ -1,29 +1,58 @@
 # To Do list: list structure
 
-![Alt text](screenshot.png?raw=true 'Screenshot')
+![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
+
+## Built With 
+
+- HTML/CSS
+- Node.JS
+
+=======
 
 ## Getting Started
 
-If you want a copy of this file go to the github repository and download it
+If you want a copy of this file go to the github repository and download it from there
 
-After cloning it you can see the project opening the index.html file with your favorite browser ( Firefox for example )
+[`git clone https://github.com/eroiyo/To-do-list`](https://github.com/eroiyo/To-do-list)
 ## Learning objectives
 
 - Use webpack to bundle JavaScript.
 - Learn how to use proper ES6 syntax.
 - Use ES6 modules to write modular JavaScript.
 
-### Instructions
-
-- Deploy your website using GitHub Pages.
-- Update the README of your repository to include a link to the online version.
-
 =======
 
-## Built With 
+### Setup
 
-- HTML/CSS
-- Node.JS
+```cmd
+git clone https://github.com/eroiyo/To-do-list
+cd ./To-do-list_m2_w2
+```
+
+### Install
+
+```cmd
+npm install
+```
+
+### Usage
+
+```cmd
+npm start
+```
+If you are non a technical person you can download the zip file.
+
+- To do that you have to go to the green button that says 'Code' and then press on it.
+- Choose the option 'Download Zip' and wait until it download.
+- Then you need to decompress it.
+- You will need to have Zip compress file software installed in your computer. If you don't have it you can download it from here
+  [`https://www.7-zip.org/download.html`](https://www.7-zip.org/download.html)
+- Do double click on the Capstone-1.zip and choose a folder where to place all teh decompressed files.
+- Once you are done decompressing, you can open the created folder.
+- In it you can double click on the index.html file and choose a browser to open it (For example google Chrome Browser).
+- Now you should be able to see the project.
+- Remember to use the mouse to navigate through the website. Also you can use the keys 'arrow up' and 'arrow down' of your keyboard
+  to scroll up and down.
 
 =======
 
