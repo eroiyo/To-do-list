@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wbpack Exercise</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>Hello webpack!</h1>
+    <h1>minimalist</h1>
     <ul class="to-do-list">
+        <li class="tdl-element first">
+            <h1 class="list-title">Today's To Do</h1>
+            <div class="refresh-button"></div>
+        </li>
         <li class="tdl-element">
-            
-            <div class="tdle-status-c"></div>
-            <div class="tdle-text-c">hello</div>
-            <div class="tdle-last-c"></div>
+            <form>
+                <input id="new-item" class="input" placeholder="Add to your list..." type="text">
+                <input id="submit-new-item" type="submit" tabindex="-1" value=""
+                    title="click this or press enter to submit" class="icon-return">
+            </form>
+        </li>
+        <li class="tdl-element erase-container">
+           <button class="erase"> Clear all completed</button>
         </li>
     </ul>
 </body>
+
 </html>
