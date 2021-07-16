@@ -1,4 +1,4 @@
-import {save} from './data.js'
+import {save, load} from './data.js'
 
 const theBigList = document.querySelector('.to-do-list');
 
@@ -25,11 +25,23 @@ function drag(element){
 }
 
 export function makeDrageable(element){
-    element.addEventListener('dragstart', () => {hold(element)})
-    element.addEventListener('dragend', () => {drag(element)
-      const e = document.querySelectorAll(".tdl-element")
-      console.log(e);
-    })
+  let newTodo =[];
+  element.addEventListener('dragstart', () => {hold(element)})
+  element.addEventListener('dragend', () => {drag(element)
+    const e = theBigList.querySelectorAll(".tdl-element")
+    let todo = load(todo);
+    todo.sort(function(a,b){return a.index-b.index});
+    for(let i=0; i<e.length; i += 1)
+    {
+      const otherId = parseInt(e[i].id)
+      console.log(otherId)
+      newTodo[i]= todo[otherId];
+      newTodo[i].index=i;
+    }
+    save(newTodo)
+    todo = load(todo);
+
+  })
 }
 
 export function makeContainer(tdl){

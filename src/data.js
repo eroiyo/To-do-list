@@ -46,5 +46,6 @@ const defaultTodo = [
   }
   export function load(variable){
     variable= JSON.parse(localStorage.getItem('information'));
+    return variable
   }
   export let todo = todov;

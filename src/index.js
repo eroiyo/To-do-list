@@ -26,6 +26,7 @@ class Todo {
       makeDrageable(container);
       container.classList.add('tdl-element');
       container.draggable = true;
+      container.id=todolist[i].index;
 
       const statusC = document.createElement('div');
       statusC.classList.add('tdle-status-c');
