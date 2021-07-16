@@ -1,4 +1,4 @@
-import { save, load } from './data.js';
+import { save, load, compare } from './data.js';
 
 const theBigList = document.querySelector('.to-do-list');
 
@@ -29,15 +29,13 @@ export function makeDrageable(element) {
     drag(element);
     const e = theBigList.querySelectorAll('.tdl-element');
     let todo = load();
-    function compare(a, b) {
-      return a.index - b.index;
-    }
 
     todo.sort(compare);
     for (let i = 0; i < e.length; i += 1) {
       const otherId = parseInt(e[i].id, 10);
       newTodo[i] = todo[otherId];
       newTodo[i].index = i;
+      e[i].id = [i];
     }
     save(newTodo);
     todo = load(todo);

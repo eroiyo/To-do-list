@@ -29,4 +29,7 @@ export function load() {
   const variable = JSON.parse(localStorage.getItem('information'));
   return variable;
 }
+export function compare(a, b) {
+  return a.index - b.index;
+}
 export const todo = todov;

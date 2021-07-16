@@ -6,6 +6,7 @@ import { makeContainer, makeDrageable } from './drag.js';
 
 const theBigList = document.querySelector('.to-do-list');
 makeContainer(theBigList);
+
 class Todo {
   constructor() {
     this.todo = null;
@@ -19,8 +20,7 @@ class Todo {
     return this.todo;
   }
 
-  showall(todolist) {
-    for (let i = 0; i < this.todo.length; i += 1) {
+  show(todolist,i){
       const activity = this.todo[i];
       const container = document.createElement('li');
       makeDrageable(container);
@@ -67,6 +67,11 @@ class Todo {
 
       container.appendChild(lastC);
       theBigList.appendChild(container);
+  }
+
+  showall(todolist) {
+    for (let i = 0; i < this.todo.length; i += 1) {
+      this.show(todolist,i)
     }
   }
 }
