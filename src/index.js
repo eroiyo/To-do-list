@@ -1,3 +1,4 @@
+// eslint-disable no-loop-func
 import './style.css';
 import { check, look } from './status.js';
 import { todo, load } from './data.js';
