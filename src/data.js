@@ -1,24 +1,5 @@
 let todov = 0;
-const defaultTodo = [
-  {
-    description: 'Complete to-do-List',
-    completed: false,
-    id: 0,
-    index: 0,
-  },
-  {
-    description: 'Clean Washes',
-    completed: true,
-    id: 1,
-    index: 1,
-  },
-  {
-    description: 'Do more examples',
-    completed: true,
-    id: 2,
-    index: 2,
-  },
-];
+const defaultTodo = [];
 
 export function storageAvailable(type) {
   let storage;
