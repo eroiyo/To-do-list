@@ -24,9 +24,9 @@ li {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  background-color: grey;
   display: grid;
   grid-auto-rows: 1fr;
+  background-color: grey;
   box-shadow: 4px 3px 8px 1px #969696;
   -webkit-box-shadow: 4px 3px 8px 1px #969696;
 }
@@ -43,6 +43,10 @@ li {
   align-items: center;
 }
 
+.tdl-element.dragging {
+  opacity: 0.5;
+}
+
 .tdle-status-c {
   width: 10%;
   align-content: center;
@@ -55,6 +59,7 @@ li {
   align-content: center;
   display: flex;
   justify-content: center;
+  cursor: move;
 }
 
 .tdle-text-c {
@@ -95,4 +100,16 @@ button:hover {
   -webkit-box-shadow: 10px 10px 99px 6px rgb(98, 109, 112);
   -moz-box-shadow: 10px 10px 99px 6px rgba(98, 109, 112);
   box-shadow: 10px 10px 99px 6px rgba(98, 109, 112);
+}
+
+.line {
+  text-decoration-line: line-through;
+}
+
+.outside-container {
+  width: 49.8%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 4px 3px 8px 1px #969696;
+  -webkit-box-shadow: 4px 3px 8px 1px #969696;
 }

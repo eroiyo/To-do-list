@@ -1,28 +1,11 @@
+/* eslint-disable no-loop-func */
 import './style.css';
+import { check, look } from './status.js';
+import { todo, load } from './data.js';
+import { makeContainer, makeDrageable } from './drag.js';
 
-const erase = document.querySelector('.erase-container');
-
-const todo = [
-  {
-    description: 'Complete to-do-List',
-    completed: false,
-    id: 0,
-    index: 0,
-  },
-  {
-    description: 'Clean Washes',
-    completed: true,
-    id: 1,
-    index: 1,
-  },
-  {
-    description: 'Do more examples',
-    completed: true,
-    id: 2,
-    index: 2,
-  },
-];
-
+const theBigList = document.querySelector('.to-do-list');
+makeContainer(theBigList);
 class Todo {
   constructor() {
     this.todo = null;
@@ -36,11 +19,14 @@ class Todo {
     return this.todo;
   }
 
-  showall() {
+  showall(todolist) {
     for (let i = 0; i < this.todo.length; i += 1) {
       const activity = this.todo[i];
       const container = document.createElement('li');
+      makeDrageable(container);
       container.classList.add('tdl-element');
+      container.draggable = true;
+      container.id = todolist[i].index;
 
       const statusC = document.createElement('div');
       statusC.classList.add('tdle-status-c');
@@ -52,13 +38,21 @@ class Todo {
       } else {
         status.classList.add('fa-square');
       }
-      statusC.appendChild(status);
-
-      container.appendChild(statusC);
+      status.addEventListener('click', () => {
+        check(status, todolist, i);
+        todolist = load();
+      });
 
       const text = document.createElement('div');
       text.classList.add('tdle-text-c');
+      if (activity.completed === true) {
+        text.classList.add('line');
+      }
       text.textContent = activity.description;
+
+      status.addEventListener('click', () => look(text));
+      statusC.appendChild(status);
+      container.appendChild(statusC);
 
       container.appendChild(text);
 
@@ -72,10 +66,10 @@ class Todo {
       lastC.appendChild(last);
 
       container.appendChild(lastC);
-      erase.parentNode.insertBefore(container, erase);
+      theBigList.appendChild(container);
     }
   }
 }
 const list = new Todo();
 list.setTodo(todo);
-list.showall();
+list.showall(todo);

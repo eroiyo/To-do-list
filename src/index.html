@@ -10,22 +10,22 @@
 
 <body>
     <h1>minimalist</h1>
+    <div class="tdl-element outside-container first">
+        <h1 class="list-title">Today's To Do</h1>
+        <div class="refresh-button"></div>
+    </div>
+    <div class="tdl-element outside-container">
+        <form>
+            <input id="new-item" class="input" placeholder="Add to your list..." type="text">
+            <input id="submit-new-item" type="submit" tabindex="-1" value=""
+                title="click this or press enter to submit" class="icon-return">
+        </form>
+    </div>
     <ul class="to-do-list">
-        <li class="tdl-element first">
-            <h1 class="list-title">Today's To Do</h1>
-            <div class="refresh-button"></div>
-        </li>
-        <li class="tdl-element">
-            <form>
-                <input id="new-item" class="input" placeholder="Add to your list..." type="text">
-                <input id="submit-new-item" type="submit" tabindex="-1" value=""
-                    title="click this or press enter to submit" class="icon-return">
-            </form>
-        </li>
-        <li class="tdl-element erase-container">
-           <button class="erase"> Clear all completed</button>
-        </li>
     </ul>
+    <div class="tdl-element outside-container">
+        <button class="erase"> Clear all completed</button>
+     </div>
 </body>
 
 </html>
