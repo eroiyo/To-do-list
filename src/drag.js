@@ -9,7 +9,7 @@ function getDragAfterElement(tdle, y) {
     const box = child.getBoundingClientRect();
     const offset = y - box.top - box.height / 2;
     if (offset < 0 && offset > closest.offset) {
-      return { offset: offset, element: child };
+      return { offset, element: child };
     } return closest;
   }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
@@ -29,8 +29,8 @@ export function makeDrageable(element) {
     drag(element);
     const e = theBigList.querySelectorAll('.tdl-element');
     let todo = load();
-    function compare (a, b) {
-      return a.index - b.index
+    function compare(a, b) {
+      return a.index - b.index;
     }
 
     todo.sort(compare);

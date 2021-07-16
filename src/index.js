@@ -19,10 +19,6 @@ class Todo {
   }
 
   showall(todolist) {
-    function a() {
-      check(status, todolist, i);
-      todolist = load();
-    }
     for (let i = 0; i < this.todo.length; i += 1) {
       const activity = this.todo[i];
       const container = document.createElement('li');
@@ -41,7 +37,10 @@ class Todo {
       } else {
         status.classList.add('fa-square');
       }
-      status.addEventListener('click', a);
+      status.addEventListener('click', () => {
+        check(status, todolist, i);
+        todolist = load();
+      });
 
       const text = document.createElement('div');
       text.classList.add('tdle-text-c');
