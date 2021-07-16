@@ -24,15 +24,18 @@ function drag(element) {
 
 export function makeDrageable(element) {
   const newTodo = [];
-  element.addEventListener('dragstart', () => { hold(element) });
+  element.addEventListener('dragstart', () => { hold(element); });
   element.addEventListener('dragend', () => {
     drag(element);
     const e = theBigList.querySelectorAll('.tdl-element');
     let todo = load();
-    function compare (a, b) { return a.index - b.index }
+    function compare (a, b) {
+      return a.index - b.index
+    }
+
     todo.sort(compare);
     for (let i = 0; i < e.length; i += 1) {
-      const otherId = parseInt(e[i].id,10);
+      const otherId = parseInt(e[i].id, 10);
       newTodo[i] = todo[otherId];
       newTodo[i].index = i;
     }
