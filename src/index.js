@@ -1,7 +1,7 @@
 import './style.css';
 import './status.js';
-import {check, look} from './status.js';
-import {todo, load} from './data.js';
+import { check, look } from './status.js';
+import { todo, load } from './data.js';
 import { makeContainer, makeDrageable } from './drag.js';
 
 const theBigList = document.querySelector('.to-do-list');
@@ -26,7 +26,7 @@ class Todo {
       makeDrageable(container);
       container.classList.add('tdl-element');
       container.draggable = true;
-      container.id=todolist[i].index;
+      container.id = todolist[i].index;
 
       const statusC = document.createElement('div');
       statusC.classList.add('tdle-status-c');
@@ -38,16 +38,16 @@ class Todo {
       } else {
         status.classList.add('fa-square');
       }
-      status.addEventListener('click', function a ()  {check(status,todolist,i); todo = load(todo)})
+      status.addEventListener('click', function a() { check(status, todolist, i); todo = load(todo) })
 
       const text = document.createElement('div');
       text.classList.add('tdle-text-c');
-      if(activity.completed === true){
+      if (activity.completed === true) {
         text.classList.add('line');
       }
       text.textContent = activity.description;
 
-      status.addEventListener  ('click', () => look(text))
+      status.addEventListener('click', () => look(text))
       statusC.appendChild(status);
       container.appendChild(statusC);
 

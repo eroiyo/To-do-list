@@ -44,7 +44,7 @@ li {
 }
 
 .tdl-element.dragging {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .tdle-status-c {
@@ -102,10 +102,11 @@ button:hover {
   box-shadow: 10px 10px 99px 6px rgba(98, 109, 112);
 }
 
-.line{
+.line {
   text-decoration-line: line-through; 
 }
-.outside-container{
+
+.outside-container {
   width: 49.8%;
   margin-left: auto;
   margin-right: auto;
