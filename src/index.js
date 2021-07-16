@@ -1,5 +1,4 @@
 import './style.css';
-import './status.js';
 import { check, look } from './status.js';
 import { todo, load } from './data.js';
 import { makeContainer, makeDrageable } from './drag.js';
@@ -38,7 +37,8 @@ class Todo {
       } else {
         status.classList.add('fa-square');
       }
-      status.addEventListener('click', function a() { check(status, todolist, i); todo = load(todo) })
+      function a() { check(status, todolist, i); todolist= load()  }
+      status.addEventListener('click',a);
 
       const text = document.createElement('div');
       text.classList.add('tdle-text-c');
@@ -47,7 +47,7 @@ class Todo {
       }
       text.textContent = activity.description;
 
-      status.addEventListener('click', () => look(text))
+      status.addEventListener('click', () => look(text));
       statusC.appendChild(status);
       container.appendChild(statusC);
 

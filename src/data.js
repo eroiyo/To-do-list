@@ -1,4 +1,4 @@
-export let todov = 0;
+let todov = 0;
 const defaultTodo = [
   {
     description: 'Complete to-do-List',
@@ -39,13 +39,13 @@ if (storageAvailable('localStorage')) {
     todov = defaultTodo;
   }
 } else {
-  todov = todov = defaultTodo;
+  todov = defaultTodo;
 }
 export function save(variable) {
   localStorage.setItem('information', JSON.stringify(variable));
 }
-export function load(variable) {
-  variable = JSON.parse(localStorage.getItem('information'));
-  return variable
+export function load() {
+  const variable = JSON.parse(localStorage.getItem('information'));
+  return variable;
 }
-export let todo = todov;
+export const todo = todov;

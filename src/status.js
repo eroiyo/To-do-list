@@ -1,12 +1,12 @@
-import { save } from './data.js'
+import { save } from './data.js';
 
 function afterchange(todo, i, boolean) {
-  todo[i].completed = boolean
+  todo[i].completed = boolean;
   save(todo);
 }
 
 export function check(element, todo, i) {
-  let boolean = false
+  let boolean = false;
   if (todo[i].completed === true) {
     element.classList.remove('fa-check-square');
     element.classList.add('fa-square');
@@ -24,5 +24,4 @@ export function look(element) {
   } else {
     element.classList.add('line');
   }
-
 }
