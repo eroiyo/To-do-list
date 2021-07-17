@@ -10,7 +10,7 @@ export function antiShowAll(element) {
 
 export function elimanateCompleteds() {
   const actualtodo = load();
-  const result = actualtodo.filter(activity => (activity.completed === false));
+  const result = actualtodo.filter((activity) => (activity.completed === false));
   for (let i = 0; i < result.length; i += 1) {
     result[i].index = i;
   }
@@ -19,8 +19,7 @@ export function elimanateCompleteds() {
 
 export function addActivity(text) {
   const actualtodo = load();
-  console.log(text);
-  const {length} = actualtodo;
+  const { length } = actualtodo;
   const newActivity = {
     description: text,
     completed: false,
@@ -32,11 +31,11 @@ export function addActivity(text) {
 }
 
 export function elimanateOne(element) {
-  const id = element.id;
+  const { id } = element;
   const actualtodo = load();
-  const result = actualtodo.filter(activity => activity.id === id);
+  const result = actualtodo.filter((activity) => activity.id === id);
   element.parentNode.removeChild(element);
-  let e = theBigList.querySelectorAll('.tdl-element');
+  const e = theBigList.querySelectorAll('.tdl-element');
   for (let i = 0; i < result.length; i += 1) {
     result[i].index = i;
     e[i].id = i;
@@ -66,7 +65,7 @@ export function onfocus(element, handle, trashcan) {
     element.classList.add('focused');
     handle.classList.add('hidden');
     trashcan.classList.remove('hidden');
-    }, 200);
+  }, 200);
 }
 export function offfocus(element, handle, trashcan) {
   setTimeout(() => {
