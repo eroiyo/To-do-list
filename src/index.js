@@ -3,8 +3,8 @@ import './style.css';
 import { check, look } from './status.js';
 import { todo, load } from './data.js';
 import { makeContainer, makeDrageable } from './drag.js';
-import { 
-  addActivity, antiShowAll, elimanateCompleteds, saveone, onfocus, offfocus, removeone 
+import {
+  addActivity, antiShowAll, elimanateCompleteds, saveone, onfocus, offfocus, removeone,
 } from './addEditErase.js';
 
 const theBigList = document.querySelector('.to-do-list');
@@ -112,7 +112,7 @@ form.addEventListener('submit', (event) => {
   const todolist = load();
   list.setTodo(todolist);
   list.showall(todolist);
-})
+});
 
 erase.addEventListener('click', () => {
   elimanateCompleteds();
