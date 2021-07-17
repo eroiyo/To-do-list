@@ -26,7 +26,10 @@ export function save(variable) {
   localStorage.setItem('information', JSON.stringify(variable));
 }
 export function load() {
-  const variable = JSON.parse(localStorage.getItem('information'));
+  let variable = JSON.parse(localStorage.getItem('information'));
+  if(variable === null){
+    variable = []
+  }
   return variable;
 }
 export function compare(a, b) {
