@@ -3,14 +3,14 @@ import './style.css';
 import { check, look } from './status.js';
 import { todo, load } from './data.js';
 import { makeContainer, makeDrageable } from './drag.js';
-import { addActivity, antiShowAll, elimanateCompleteds, saveone, onfocus, offfocus, removeone } from './addEditErase.js';
+import { 
+  addActivity, antiShowAll, elimanateCompleteds, saveone, onfocus, offfocus, removeone 
+} from './addEditErase.js';
 
 const theBigList = document.querySelector('.to-do-list');
-const formButton = document.getElementById('submit-new-item');
 const taskcreator = document.getElementById('new-item');
 const erase = document.querySelector('.erase');
 const form = document.getElementById('form');
-
 
 makeContainer(theBigList);
 
@@ -66,20 +66,20 @@ class Todo {
     trashcan.classList.add('fa-trash');
     trashcan.classList.add('hidden');
     trashcan.addEventListener('click', () => {
-      this.todo = removeone(trashcan)
+      this.todo = removeone(trashcan);
       antiShowAll(theBigList);
       this.showall(todolist);
-    })
+    });
 
-    input.onfocus = () => { onfocus(input, last, trashcan); }
-    input.onblur = () => { offfocus(input, last, trashcan); }
+    input.onfocus = () => { onfocus(input, last, trashcan); };
+    input.onblur = () => { offfocus(input, last, trashcan); };
     text.classList.add('tdle-text-c');
     if (activity.completed === true) {
       input.classList.add('line');
     }
     input.value = activity.description;
-    input.classList.add("editable");
-    input.onchange = (() => { saveone(input) });
+    input.classList.add('editable');
+    input.onchange = (() => { saveone(input); });
     text.appendChild(input);
     status.addEventListener('click', () => look(input));
     statusC.appendChild(status);
@@ -88,7 +88,7 @@ class Todo {
     container.appendChild(text);
 
     lastC.appendChild(last);
-    lastC.appendChild(trashcan)
+    lastC.appendChild(trashcan);
 
     container.appendChild(lastC);
     theBigList.appendChild(container);
@@ -96,32 +96,28 @@ class Todo {
 
   showall(todolist) {
     for (let i = 0; i < this.todo.length; i += 1) {
-      this.show(todolist, i)
+      this.show(todolist, i);
     }
   }
 }
 
-
 const list = new Todo();
 list.setTodo(todo);
 list.showall(todo);
-
-
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   addActivity(taskcreator.value);
   antiShowAll(theBigList);
   const todolist = load();
-  list.setTodo(todolist)
-  list.showall(todolist)
+  list.setTodo(todolist);
+  list.showall(todolist);
 })
-
 
 erase.addEventListener('click', () => {
   elimanateCompleteds();
   const todolist = load();
   antiShowAll(theBigList);
-  list.setTodo(todolist)
-  list.showall(todolist)
-})
+  list.setTodo(todolist);
+  list.showall(todolist);
+});
