@@ -3,8 +3,8 @@ import { save, load} from './data.js';
 const theBigList = document.querySelector('.to-do-list');
 
 export function antiShowAll(element){
-    while(element.hasChildNodes){
-        element.removeChild(element.lastChild);
+    while(element.lastElementChild){
+        element.removeChild(element.lastElementChild);
     }
 }
 
@@ -18,14 +18,16 @@ export function elimanateCompleteds(){
 }
 
 export function addActivity(text){
-    actualtodo =load()
-    newActivity =  {
+    let actualtodo =load()
+    console.log(text)
+    const length= (actualtodo.length)
+    const newActivity =  {
         description: text,
         completed: false,
         id: Date(),
-        index: actualtodo.length,
+        index: length,
     }
-    actualtodo[actualtodo.length] =newActivity;
+    actualtodo[length] = newActivity;
     save(actualtodo);
 }
 
@@ -41,4 +43,38 @@ export function elimanateOne(element){
 
     }
     save(result);
+}
+
+export function saveone(element){
+    let todolist = load();
+    const index = element.parentNode.parentNode.id
+    todolist[index].description = element.value;
+    save(todolist);
+    return todolist;
+}
+
+export function removeone(element){
+    let todolist = load();
+    const index = element.parentNode.parentNode.id
+    todolist.splice(index,1);
+    save(todolist)
+    
+    return todolist;
+}
+
+export function onfocus(element,handle,trashcan){
+    setTimeout( () => {
+    element.parentNode.parentNode.classList.add('focused');
+    element.classList.add('focused');
+    handle.classList.add('hidden');
+    trashcan.classList.remove('hidden');}
+    , 200);
+}
+export function offfocus(element,handle,trashcan){
+    setTimeout( () => {
+    element.parentNode.parentNode.classList.remove('focused');
+    element.classList.remove('focused');
+    handle.classList.remove('hidden');
+    trashcan.classList.add('hidden');
+    }, 200);
 }

@@ -54,7 +54,17 @@ li {
   justify-content: center;
 }
 
-.tdle-last-c {
+.tdle-last-c{
+  justify-content: center;
+}
+
+i{
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fa-ellipsis-v {
   width: 10%;
   align-content: center;
   display: flex;
@@ -112,4 +122,24 @@ button:hover {
   margin-right: auto;
   box-shadow: 4px 3px 8px 1px #969696;
   -webkit-box-shadow: 4px 3px 8px 1px #969696;
+}
+
+.editable{
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.editable:focus{
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.focused{
+  background-color: lightsalmon;
+}
+
+.hidden{
+  display: none;
 }
