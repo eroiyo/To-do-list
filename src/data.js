@@ -27,8 +27,8 @@ export function save(variable) {
 }
 export function load() {
   let variable = JSON.parse(localStorage.getItem('information'));
-  if(variable === null){
-    variable = []
+  if (variable === null) {
+    variable = [];
   }
   return variable;
 }
