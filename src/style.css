@@ -54,11 +54,11 @@ li {
   justify-content: center;
 }
 
-.tdle-last-c{
+.tdle-last-c {
   justify-content: center;
 }
 
-i{
+i {
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
@@ -124,22 +124,22 @@ button:hover {
   -webkit-box-shadow: 4px 3px 8px 1px #969696;
 }
 
-.editable{
+.editable {
   height: 100%;
   width: 100%;
   border: none;
 }
 
-.editable:focus{
+.editable:focus {
   text-decoration: none;
   border: none;
   outline: none;
 }
 
-.focused{
+.focused {
   background-color: lightsalmon;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
