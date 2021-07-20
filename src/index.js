@@ -6,6 +6,10 @@ import { makeContainer, makeDrageable } from './drag.js';
 import {
   addActivity, antiShowAll, elimanateCompleteds, saveone, onfocus, offfocus, removeone,
 } from './addEditErase.js';
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
 
 const theBigList = document.querySelector('.to-do-list');
 const taskcreator = document.getElementById('new-item');
