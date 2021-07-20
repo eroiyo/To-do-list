@@ -1,9 +1,30 @@
 import './style.css';
 import './status.js';
 import { uncheck,check } from './status.js';
-import {todo} from './data.js'
 
 const erase = document.querySelector('.erase-container');
+
+const todo = [
+  {
+    description: 'Complete to-do-List',
+    completed: false,
+    id: 0,
+    index: 0,
+  },
+  {
+    description: 'Clean Washes',
+    completed: true,
+    id: 1,
+    index: 1,
+  },
+  {
+    description: 'Do more examples',
+    completed: true,
+    id: 2,
+    index: 2,
+  },
+];
+
 class Todo {
   constructor() {
     this.todo = null;
