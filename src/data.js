@@ -41,10 +41,7 @@ const defaultTodo = [
   }else {
       todov = todov = defaultTodo;
   }
-  export function save(variable){
-    localStorage.setItem('information', JSON.stringify(variable));
-  }
-  export function load(variable){
-    variable= JSON.parse(localStorage.getItem('information'));
+  export function save(){
+    localStorage.setItem('information', JSON.stringify(to)
   }
   export let todo = todov;
