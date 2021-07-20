@@ -24,9 +24,9 @@ li {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  background-color: grey;
   display: grid;
   grid-auto-rows: 1fr;
-  background-color: grey;
   box-shadow: 4px 3px 8px 1px #969696;
   -webkit-box-shadow: 4px 3px 8px 1px #969696;
 }
@@ -105,10 +105,8 @@ button:hover {
 .line{
   text-decoration-line: line-through; 
 }
-.outside-container{
-  width: 49.8%;
+.erase-container{
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 4px 3px 8px 1px #969696;
-  -webkit-box-shadow: 4px 3px 8px 1px #969696;
 }
