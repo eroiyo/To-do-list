@@ -1,7 +1,3 @@
-import {save} from './data.js'
-
-const theBigList = document.querySelector('.to-do-list');
-
 function getDragAfterElement(tdle, y) {
     const dragableElements = [...tdle.querySelectorAll('.tdl-element:not(.dragging)')]
   
@@ -26,10 +22,7 @@ function drag(element){
 
 export function makeDrageable(element){
     element.addEventListener('dragstart', () => {hold(element)})
-    element.addEventListener('dragend', () => {drag(element)
-      const e = document.querySelectorAll(".tdl-element")
-      console.log(e);
-    })
+    element.addEventListener('dragend', () => {drag(element)})
 }
 
 export function makeContainer(tdl){
