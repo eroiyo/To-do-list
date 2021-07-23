@@ -30,7 +30,7 @@ If you want a copy of this file go to the github repository and download it from
 
 ```cmd
 git clone https://github.com/eroiyo/To-do-list
-cd ./To-do-list_m2_w2
+cd ./To-do-list
 ```
 
 ### Install
@@ -73,7 +73,7 @@ If you are non a technical person you can download the zip file.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/eroiyo/To-do-list/issues/).
 
 =======
 
