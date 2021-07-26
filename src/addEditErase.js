@@ -15,6 +15,7 @@ export function elimanateCompleteds() {
     result[i].index = i;
   }
   save(result);
+  return actualtodo
 }
 
 export function addActivity(text) {
@@ -28,6 +29,7 @@ export function addActivity(text) {
   };
   actualtodo[length] = newActivity;
   save(actualtodo);
+  return actualtodo
 }
 
 export function saveone(element) {

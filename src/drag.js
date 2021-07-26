@@ -39,6 +39,7 @@ export function makeDrageable(element) {
     }
     save(newTodo);
     todo = load(todo);
+    return todo;
   });
 }
 

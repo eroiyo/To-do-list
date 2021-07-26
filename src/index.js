@@ -46,9 +46,7 @@ class Todo {
       status.classList.add('fa-square');
     }
     status.addEventListener('click', () => {
-      todolist = load();
-      check(status, todolist);
-      todolist = load();
+      todolist = check(status, todolist);
     });
 
     const text = document.createElement('div');
