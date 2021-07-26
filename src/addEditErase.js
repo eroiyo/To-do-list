@@ -30,19 +30,6 @@ export function addActivity(text) {
   save(actualtodo);
 }
 
-export function elimanateOne(element) {
-  const { id } = element;
-  const actualtodo = load();
-  const result = actualtodo.filter((activity) => activity.id === id);
-  element.parentNode.removeChild(element);
-  const e = theBigList.querySelectorAll('.tdl-element');
-  for (let i = 0; i < result.length; i += 1) {
-    result[i].index = i;
-    e[i].id = i;
-  }
-  save(result);
-}
-
 export function saveone(element) {
   const todolist = load();
   const index = element.parentNode.parentNode.id;
