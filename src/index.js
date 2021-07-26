@@ -30,15 +30,21 @@ class Todo {
   show(todolist, i) {
     const activity = this.todo[i];
     const container = document.createElement('li');
+    const statusC = document.createElement('div');
+    const status = document.createElement('i');
+
+    const text = document.createElement('div');
+    const input = document.createElement('input');
+
+    const lastC = document.createElement('div');
+    const last = document.createElement('i');
+    const trashcan = document.createElement('i');
+
     makeDrageable(container);
     container.classList.add('tdl-element');
     container.draggable = true;
     container.id = todolist[i].index;
-
-    const statusC = document.createElement('div');
     statusC.classList.add('tdle-status-c');
-
-    const status = document.createElement('i');
     status.classList.add('far');
     if (activity.completed === true) {
       status.classList.add('fa-check-square');
@@ -46,18 +52,9 @@ class Todo {
       status.classList.add('fa-square');
     }
     status.addEventListener('click', () => {
-      todolist = load();
-      check(status, todolist);
-      todolist = load();
+      todolist = check(status, todolist);
     });
-
-    const text = document.createElement('div');
-    const input = document.createElement('input');
-    const lastC = document.createElement('div');
     lastC.classList.add('tdle-last-c');
-
-    const last = document.createElement('i');
-    const trashcan = document.createElement('i');
 
     last.classList.add('fas');
     trashcan.classList.add('fas');
@@ -80,16 +77,16 @@ class Todo {
     input.value = activity.description;
     input.classList.add('editable');
     input.onchange = (() => { saveone(input); });
-    text.appendChild(input);
     status.addEventListener('click', () => look(input));
+
+    text.appendChild(input);
     statusC.appendChild(status);
     container.appendChild(statusC);
 
     container.appendChild(text);
-
     lastC.appendChild(last);
+    
     lastC.appendChild(trashcan);
-
     container.appendChild(lastC);
     theBigList.appendChild(container);
   }

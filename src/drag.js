@@ -39,6 +39,7 @@ export function makeDrageable(element) {
     }
     save(newTodo);
     todo = load(todo);
+    return todo;
   });
 }
 
@@ -46,7 +47,7 @@ export function makeContainer(tdl) {
   tdl.addEventListener('dragover', (e) => {
     e.preventDefault();
     const afterElement = getDragAfterElement(tdl, e.clientY);
-    const dragable = document.querySelector('.dragging');
+    const dragable = theBigList.querySelector('.dragging');
     if (afterElement == null) {
       tdl.appendChild(dragable);
     } else {

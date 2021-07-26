@@ -15,6 +15,7 @@ export function elimanateCompleteds() {
     result[i].index = i;
   }
   save(result);
+  return actualtodo
 }
 
 export function addActivity(text) {
@@ -28,19 +29,7 @@ export function addActivity(text) {
   };
   actualtodo[length] = newActivity;
   save(actualtodo);
-}
-
-export function elimanateOne(element) {
-  const { id } = element;
-  const actualtodo = load();
-  const result = actualtodo.filter((activity) => activity.id === id);
-  element.parentNode.removeChild(element);
-  const e = theBigList.querySelectorAll('.tdl-element');
-  for (let i = 0; i < result.length; i += 1) {
-    result[i].index = i;
-    e[i].id = i;
-  }
-  save(result);
+  return actualtodo
 }
 
 export function saveone(element) {

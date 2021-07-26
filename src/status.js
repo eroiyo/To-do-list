@@ -3,6 +3,7 @@ import { save } from './data.js';
 function afterchange(todo, i, boolean) {
   todo[i].completed = boolean;
   save(todo);
+  return todo;
 }
 
 export function check(element, todo) {
@@ -16,7 +17,7 @@ export function check(element, todo) {
     element.classList.remove('fa-square');
     element.classList.add('fa-check-square');
   }
-  afterchange(todo, i, boolean);
+  return afterchange(todo, i, boolean);
 }
 
 export function look(element) {
