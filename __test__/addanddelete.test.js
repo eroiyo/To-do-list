@@ -7,6 +7,13 @@ const data = require('../src/data');
 const addEditErase = require('../src/addEditErase');
 const todoObject = require('../src/todo')
 
+document.body.innerHTML =
+'<div>' +
+'  <span id="username" />' +
+'  <button id="button" />' +
+' <li class="to-do-list"></li>'
+'</div>';
+
 
 describe('The add function is working as expected', () => {
   test('add a element to local Storage', () => {
@@ -18,25 +25,14 @@ describe('The add function is working as expected', () => {
 
   test('add a element to todolist object', () => {
    let list = new todoObject.Todo();
-   addEditErase.addActivity("hello");
    const result=data.load();
    list.setTodo(result);
-   expect(list.todo.length).toBe(1);
+   expect(list.todo).toHaveLength(1);
   });
 
   test('modify the html, adding a new element', () => {
+    const theBigList = document.querySelector('.to-do-list');
     expect(true).toBe(true)
-  });
-
-  test('delete a element from todolist object', () => {
-    expect(true).toBe(true)
-  });
-
-  test('delete a element from localstorage', () => {
-    expect(true).toBe(true)
-  });
-
-  test('delete a element from html', () => {
-    expect(true).toBe(true)
+    console.log(theBigList)
   });
 });
