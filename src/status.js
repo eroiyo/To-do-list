@@ -7,7 +7,7 @@ function afterchange(todo, i, boolean) {
 }
 
 export function check(element) {
-  let todo = load();
+  const todo = load();
   const i = element.parentNode.parentNode.id;
   let boolean = false;
   if (todo[i].completed === true) {

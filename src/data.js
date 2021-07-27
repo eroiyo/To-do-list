@@ -10,8 +10,8 @@ export function storageAvailable(type) {
     storage.removeItem(x);
     return true;
   } catch (e) {
-    false
-  }
+    return false;
+}
 }
 
 if (storageAvailable('localStorage')) {
