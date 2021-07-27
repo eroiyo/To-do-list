@@ -53,9 +53,7 @@ export class Todo {
       trashcan.classList.add('fa-trash');
       trashcan.classList.add('hidden');
       trashcan.addEventListener('click', () => {
-        this.todo = removeone(trashcan);
-        antiShowAll(theBigList);
-        this.showall(todolist);
+        this.todo = removeone(container);
       });
   
       input.onfocus = () => { onfocus(input, last, trashcan); };

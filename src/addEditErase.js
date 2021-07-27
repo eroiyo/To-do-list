@@ -40,7 +40,7 @@ export function saveone(element) {
 
 export function removeone(element) {
   const todolist = load();
-  const index = element.parentNode.parentNode.id;
+  const index = element.id;
   todolist.splice(index, 1);
   save(todolist);
   return todolist;
