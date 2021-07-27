@@ -1,9 +1,9 @@
 /* eslint-disable no-loop-func */
 import './style.css';
-import { todo, load } from './data.js';
+import { todo } from './data.js';
 import { makeContainer } from './drag.js';
 import {
-  addActivity, antiShowAll, elimanateCompleteds
+  addActivity, elimanateCompleteds
 } from './addEditErase.js';
 import {Todo} from './todo.js'
 
@@ -16,19 +16,15 @@ makeContainer(theBigList);
 
 let list = new Todo();
 list.setTodo(todo);
-list.showall(todo);
+list.showall();
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const result = addActivity(taskcreator.value);
-  antiShowAll(theBigList);
-  list.setTodo(result);
-  list.showall(result);
+  const result = addActivity(taskcreator);
+  list.update(result);
 });
 
 erase.addEventListener('click', () => {
   const result = elimanateCompleteds();
-  antiShowAll(theBigList);
-  list.setTodo(result);
-  list.showall(result);
+  list.update(result);
 });

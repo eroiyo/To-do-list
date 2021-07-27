@@ -9,9 +9,7 @@ const todoObject = require('../src/todo')
 
 document.body.innerHTML =
 '<div>' +
-'  <span id="username" />' +
-'  <button id="button" />' +
-' <li class="to-do-list"></li>'
+' <li class="to-do-list"></li>'+
 '</div>';
 
 

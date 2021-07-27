@@ -17,7 +17,7 @@ export class Todo {
     return this.todo;
   }
   
-    show(todolist, i) {
+    show(i) {
       const activity = this.todo[i];
       const container = document.createElement('li');
       const statusC = document.createElement('div');
@@ -33,7 +33,8 @@ export class Todo {
       makeDrageable(container);
       container.classList.add('tdl-element');
       container.draggable = true;
-      container.id = todolist[i].index;
+      container.id = i;
+      this.todo[i].index = i
       statusC.classList.add('tdle-status-c');
       status.classList.add('far');
       if (activity.completed === true) {
@@ -42,7 +43,7 @@ export class Todo {
         status.classList.add('fa-square');
       }
       status.addEventListener('click', () => {
-        todolist = check(status, todolist);
+        this.todo = check(status, this.todo);
       });
       lastC.classList.add('tdle-last-c');
   
@@ -53,7 +54,7 @@ export class Todo {
       trashcan.classList.add('fa-trash');
       trashcan.classList.add('hidden');
       trashcan.addEventListener('click', () => {
-        this.todo = removeone(container);
+        this.todo = removeone(container.id, theBigList);
       });
   
       input.onfocus = () => { onfocus(input, last, trashcan); };
@@ -79,9 +80,15 @@ export class Todo {
       theBigList.appendChild(container);
     }
   
-    showall(todolist) {
+    showall() {
       for (let i = 0; i < this.todo.length; i += 1) {
-        this.show(todolist, i);
+        this.show(i);
     }
+  }
+  update(todolist)
+  {
+    this.todo=todolist;
+    antiShowAll(theBigList);
+    this.showall();
   }
 }
