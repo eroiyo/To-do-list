@@ -7,7 +7,7 @@ function afterchange(todo, i, boolean) {
 }
 
 export function check(element, todo) {
-  const i = element.parentNode.parentNode.id;
+  const i = element.id;
   let boolean = false;
   if (todo[i].completed === true) {
     element.classList.remove('fa-check-square');
