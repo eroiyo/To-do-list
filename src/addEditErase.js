@@ -1,7 +1,5 @@
 import { save, load } from './data.js';
 
-const theBigList = document.querySelector('.to-do-list');
-
 export function antiShowAll(element) {
   while (element.lastElementChild) {
     element.removeChild(element.lastElementChild);
@@ -15,21 +13,22 @@ export function elimanateCompleteds() {
     result[i].index = i;
   }
   save(result);
-  return actualtodo
+  return result;
 }
 
-export function addActivity(text) {
+export function addActivity(taskcreator) {
   const actualtodo = load();
   const { length } = actualtodo;
   const newActivity = {
-    description: text,
+    description: taskcreator.value,
     completed: false,
     id: Date(),
     index: length,
   };
+  taskcreator.value = '';
   actualtodo[length] = newActivity;
   save(actualtodo);
-  return actualtodo
+  return actualtodo;
 }
 
 export function saveone(element) {
@@ -40,11 +39,21 @@ export function saveone(element) {
   return todolist;
 }
 
-export function removeone(element) {
+function renewIndex(space) {
+  let i = 0;
+  space.childNodes.forEach((element) => {
+    element.id = i;
+    i += 1;
+  });
+}
+
+export function removeone(i, space) {
+  const element = space.childNodes[i];
   const todolist = load();
-  const index = element.parentNode.parentNode.id;
-  todolist.splice(index, 1);
+  todolist.splice(i, 1);
   save(todolist);
+  space.removeChild(element);
+  renewIndex(space);
   return todolist;
 }
 

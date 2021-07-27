@@ -1,4 +1,4 @@
-import { save } from './data.js';
+import { save, load } from './data.js';
 
 function afterchange(todo, i, boolean) {
   todo[i].completed = boolean;
@@ -6,7 +6,8 @@ function afterchange(todo, i, boolean) {
   return todo;
 }
 
-export function check(element, todo) {
+export function check(element) {
+  const todo = load();
   const i = element.parentNode.parentNode.id;
   let boolean = false;
   if (todo[i].completed === true) {
