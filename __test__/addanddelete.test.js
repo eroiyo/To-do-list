@@ -6,11 +6,7 @@ const data = require('../src/data.js');
 const addEditErase = require('../src/addEditErase.js');
 const todoObject = require('../src/todo.js');
 
-document.body.innerHTML = 
- `<input id="new-item" class="input" placeholder="Add to your list..." type="text" value="hola">
-  <div>
-   <li class="to-do-list"></li>
-  </div>`;
+document.body.innerHTML = `<input id="new-item" class="input" placeholder="Add to your list..." type="text" value="hola"> <div> <li class="to-do-list"></li> </div>`;
 const theBigList = document.querySelector('.to-do-list');
 
 const input = document.getElementById('new-item');

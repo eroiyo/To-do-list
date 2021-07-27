@@ -43,7 +43,7 @@ function renewIndex(space) {
   let i = 0;
   space.childNodes.forEach((element) => {
     element.id = i;
-    i +=1;
+    i += 1;
   });
 }
 
