@@ -16,6 +16,7 @@ makeContainer(theBigList);
 
 let list = new Todo();
 list.setTodo(todo);
+list.setWhere(theBigList);
 list.showall();
 
 form.addEventListener('submit', (event) => {

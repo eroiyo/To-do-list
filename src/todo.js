@@ -3,16 +3,17 @@ import { makeDrageable } from './drag.js';
 import { antiShowAll, saveone, onfocus, offfocus, removeone,
 } from './addEditErase.js';
 
-const theBigList = document.querySelector('.to-do-list');
-
 export class Todo {
   constructor() {
     this.todo = null;
+    this.where =null;
   }
   setTodo(todolist) {
     this.todo = todolist;
   }
-  
+  setWhere(where){
+    this.where = where;
+  }
   getTodo() {
     return this.todo;
   }
@@ -43,7 +44,8 @@ export class Todo {
         status.classList.add('fa-square');
       }
       status.addEventListener('click', () => {
-        this.todo = check(container, this.todo);
+        const result = check(status, this.todo);
+        this.update(result);
       });
       lastC.classList.add('tdle-last-c');
   
@@ -54,7 +56,7 @@ export class Todo {
       trashcan.classList.add('fa-trash');
       trashcan.classList.add('hidden');
       trashcan.addEventListener('click', () => {
-        this.todo = removeone(container.id, theBigList);
+        this.todo = removeone(container.id, this.where);
       });
   
       input.onfocus = () => { onfocus(input, last, trashcan); };
@@ -77,7 +79,7 @@ export class Todo {
   
       lastC.appendChild(trashcan);
       container.appendChild(lastC);
-      theBigList.appendChild(container);
+      this.where.appendChild(container);
     }
   
     showall() {
@@ -88,7 +90,7 @@ export class Todo {
   update(todolist)
   {
     this.todo=todolist;
-    antiShowAll(theBigList);
+    antiShowAll(this.where);
     this.showall();
   }
 }
