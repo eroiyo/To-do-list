@@ -4,17 +4,21 @@ import {
   antiShowAll, saveone, onfocus, offfocus, removeone,
 } from './addEditErase.js';
 
+export const pi = 3.14
 export class Todo {
   constructor() {
     this.todo = null;
     this.where = null;
   }
+
   setTodo(todolist) {
     this.todo = todolist;
   }
+
   setWhere(where) {
     this.where = where;
   }
+
   getTodo() {
     return this.todo;
   }
@@ -36,7 +40,7 @@ export class Todo {
     container.classList.add('tdl-element');
     container.draggable = true;
     container.id = i;
-    this.todo[i].index = i
+    this.todo[i].index = i;
     statusC.classList.add('tdle-status-c');
     status.classList.add('far');
     if (activity.completed === true) {
@@ -88,6 +92,7 @@ export class Todo {
       this.show(i);
     }
   }
+
   update(todolist) {
     this.todo = todolist;
     antiShowAll(this.where);

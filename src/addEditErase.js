@@ -13,7 +13,7 @@ export function elimanateCompleteds() {
     result[i].index = i;
   }
   save(result);
-  return result
+  return result;
 }
 
 export function addActivity(taskcreator) {
@@ -25,10 +25,10 @@ export function addActivity(taskcreator) {
     id: Date(),
     index: length,
   };
-  taskcreator.value="";
+  taskcreator.value = '';
   actualtodo[length] = newActivity;
   save(actualtodo);
-  return actualtodo
+  return actualtodo;
 }
 
 export function saveone(element) {
@@ -39,20 +39,20 @@ export function saveone(element) {
   return todolist;
 }
 
-function renewIndex(space){
-  let i=0;
-  space.childNodes.forEach(element => {
-    element.id=i
-    i++
+function renewIndex(space) {
+  let i = 0;
+  space.childNodes.forEach((element) => {
+    element.id = i;
+    i +=1;
   });
 }
 
-export function removeone(i,space) {
+export function removeone(i, space) {
   const element = space.childNodes[i];
   const todolist = load();
   todolist.splice(i, 1);
   save(todolist);
-  space.removeChild(element)
+  space.removeChild(element);
   renewIndex(space);
   return todolist;
 }
