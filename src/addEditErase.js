@@ -1,7 +1,5 @@
 import { save, load } from './data.js';
 
-const theBigList = document.querySelector('.to-do-list');
-
 export function antiShowAll(element) {
   while (element.lastElementChild) {
     element.removeChild(element.lastElementChild);
@@ -15,7 +13,7 @@ export function elimanateCompleteds() {
     result[i].index = i;
   }
   save(result);
-  return actualtodo
+  return result
 }
 
 export function addActivity(text) {
