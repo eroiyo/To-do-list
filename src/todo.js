@@ -4,7 +4,7 @@ import {
   antiShowAll, saveone, onfocus, offfocus, removeone,
 } from './addEditErase.js';
 
-export const pi = 3.14
+export const pi = 3.14;
 export class Todo {
   constructor() {
     this.todo = null;

@@ -11,7 +11,7 @@ export function storageAvailable(type) {
     return true;
   } catch (e) {
     return false;
-}
+  }
 }
 
 if (storageAvailable('localStorage')) {
