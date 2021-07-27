@@ -44,7 +44,7 @@ export class Todo {
         status.classList.add('fa-square');
       }
       status.addEventListener('click', () => {
-        const result = check(status, this.todo);
+        const result = check(status);
         this.update(result);
       });
       lastC.classList.add('tdle-last-c');
