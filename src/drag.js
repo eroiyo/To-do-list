@@ -8,46 +8,45 @@ function getDragAfterElement(tdle, y) {
   return dragableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect();
     const offset = y - box.top - box.height / 2;
-    if (offset < 0 && offset > closest.offset) {
-      return { offset, element: child };
+    if (offset < 0 && offset > closest.offset) { //this function is the one that let you put the elements
+      return { offset, element: child }; //in the middle of the list instead of only the last position 
     } return closest;
   }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
 
 function hold(element) {
-  element.classList.add('dragging');
+  element.classList.add('dragging'); //assing the class for the element that is currently being hold
 }
 
 function drag(element) {
-  element.classList.remove('dragging');
+  element.classList.remove('dragging'); //delete the class when stop holding the element
 }
 
 export function makeDrageable(element) {
   const newTodo = [];
   element.addEventListener('dragstart', () => { hold(element); });
-  element.addEventListener('dragend', () => {
+  element.addEventListener('dragend', () => {  //giving the dragging classes when needed
     drag(element);
     const e = theBigList.querySelectorAll('.tdl-element');
-    let todo = load();
+    let todo = load(); //load current localstorage information
 
     todo.sort(compare);
-    for (let i = 0; i < e.length; i += 1) {
+    for (let i = 0; i < e.length; i += 1) { //compared the old information with the html actual positions
       const otherId = parseInt(e[i].id, 10);
       newTodo[i] = todo[otherId];
       newTodo[i].index = i;
       e[i].id = [i];
     }
-    save(newTodo);
-    todo = load(todo);
-    return todo;
+    save(newTodo); //save the new list
+    return newTodo;// and return it for the todo object
   });
 }
 
 export function makeContainer(tdl) {
   tdl.addEventListener('dragover', (e) => {
     e.preventDefault();
-    const afterElement = getDragAfterElement(tdl, e.clientY);
-    const dragable = theBigList.querySelector('.dragging');
+    const afterElement = getDragAfterElement(tdl, e.clientY); //make the list a element that can take
+    const dragable = theBigList.querySelector('.dragging'); //the draggeable elements
     if (afterElement == null) {
       tdl.appendChild(dragable);
     } else {

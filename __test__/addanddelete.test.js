@@ -13,7 +13,7 @@ const input = document.getElementById('new-item');
 
 describe('The add function is working as expected', () => {
   test('add a element to local Storage', () => {
-    addEditErase.addActivity(input);
+    addEditErase.addActivity(input.value);
     const result = data.load();
     expect(result).toHaveLength(1);
   });

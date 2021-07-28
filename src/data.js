@@ -1,7 +1,7 @@
 let todov = 0;
 const defaultTodo = [];
 
-export function storageAvailable(type) {
+export function storageAvailable(type) { //look is localstorage is avalible
   let storage;
   try {
     storage = window[type];
@@ -13,7 +13,7 @@ export function storageAvailable(type) {
     return false;
   }
 }
-
+ //this functions are to save and load from localstorage, widely used in the project
 if (storageAvailable('localStorage')) {
   todov = JSON.parse(localStorage.getItem('information'));
   if (todov === null) {
@@ -23,7 +23,7 @@ if (storageAvailable('localStorage')) {
   todov = defaultTodo;
 }
 export function save(variable) {
-  localStorage.setItem('information', JSON.stringify(variable));
+  localStorage.setItem('information', JSON.stringify(variable)); 
 }
 export function load() {
   let variable = JSON.parse(localStorage.getItem('information'));
@@ -32,7 +32,7 @@ export function load() {
   }
   return variable;
 }
-export function compare(a, b) {
+export function compare(a, b) { //function to array sorting a<b
   return a.index - b.index;
 }
 export const todo = todov;
