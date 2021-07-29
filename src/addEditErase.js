@@ -47,7 +47,7 @@ function renewIndex(space) { // add index as id for every child in a HTML elemen
 }
 
 export function removeone(i, space) {
-  const element = space.childNodes[i]; 
+  const element = space.childNodes[i];
   const todolist = load();
   todolist.splice(i, 1); // delete a element forn localstorage
   save(todolist); // save the new list

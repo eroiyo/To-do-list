@@ -15,8 +15,8 @@ function getDragAfterElement(tdle, y) {
 }
 
 function hold(element) {
-  element.classList.add('dragging'); // assing the class for the element that is currently 
-} //being hold
+  element.classList.add('dragging'); // assing the class for the element that is currently
+} // being hold
 
 function drag(element) {
   element.classList.remove('dragging'); // delete the class when stop holding the element
@@ -28,7 +28,7 @@ export function dragend(list) {
   const e = list.querySelectorAll('.tdl-element');
   const todo = load(); // load current localstorage information
   todo.sort(compare);
-  for (let i = 0; i < e.length; i += 1) { // compared the old information with the html actual 
+  for (let i = 0; i < e.length; i += 1) { // compared the old information with the html actual
     const otherId = parseInt(e[i].id, 10);// positions
     newTodo[i] = todo[otherId];
     newTodo[i].index = i;
