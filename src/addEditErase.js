@@ -1,16 +1,16 @@
 import { save, load } from './data.js';
 
 export function antiShowAll(element) {
-  while (element.lastElementChild) { //delete all the child elements
-    element.removeChild(element.lastElementChild); //to stop displaying information in the html
+  while (element.lastElementChild) { // delete all the child elements
+    element.removeChild(element.lastElementChild); // to stop displaying information in the html
   }
 }
 
 export function elimanateCompleteds() {
   const actualtodo = load();
-  const result = actualtodo.filter((activity) => (activity.completed === false)); //delete all the completed
-  for (let i = 0; i < result.length; i += 1) { //dutys from the list, and return a new one
-    result[i].index = i; //without completed acitivtys
+  const result = actualtodo.filter((activity) => (activity.completed === false)); // delete all the completed
+  for (let i = 0; i < result.length; i += 1) { // dutys from the list, and return a new one
+    result[i].index = i; // without completed acitivtys
   }
   save(result);
   return result;
