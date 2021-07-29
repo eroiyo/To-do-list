@@ -9,8 +9,8 @@ function getDragAfterElement(tdle, y) {
     const box = child.getBoundingClientRect();
     const offset = y - box.top - box.height / 2;
     if (offset < 0 && offset > closest.offset) { // this function is the one that let you
-      return { offset, element: child }; //put the elements in the middle of the list
-    } return closest; //instead of only the last position
+      return { offset, element: child }; // put the elements in the middle of the list
+    } return closest; // instead of only the last position
   }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
 
@@ -29,7 +29,7 @@ export function dragend(list) {
   const todo = load(); // load current localstorage information
   todo.sort(compare);
   for (let i = 0; i < e.length; i += 1) { // compared the old information with the html actual 
-    const otherId = parseInt(e[i].id, 10);//positions
+    const otherId = parseInt(e[i].id, 10);// positions
     newTodo[i] = todo[otherId];
     newTodo[i].index = i;
     e[i].id = [i];
@@ -50,7 +50,7 @@ export function makeContainer(tdl) {
   tdl.addEventListener('dragover', (e) => {
     e.preventDefault();
     const afterElement = getDragAfterElement(tdl, e.clientY); // make the list a element that
-    const dragable = theBigList.querySelector('.dragging'); //can take the draggeable elements
+    const dragable = theBigList.querySelector('.dragging'); // can take the draggeable elements
     if (afterElement == null) {
       tdl.appendChild(dragable);
     } else {

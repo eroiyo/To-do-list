@@ -9,13 +9,13 @@ function afterchange(todo, i, boolean) {
 export function check(element) {
   const todo = load();
   const i = element.parentNode.parentNode.id; // get the id of the container to modify the
-  let boolean = false; //localstorage in the afterchange function
+  let boolean = false; // localstorage in the afterchange function
   if (todo[i].completed === true) {
     element.classList.remove('fa-check-square');
     element.classList.add('fa-square');
   } else {
     boolean = true; // this both conditionals change the apparence of the checkbox depending
-    element.classList.remove('fa-square');//prior stage
+    element.classList.remove('fa-square');// prior stage
     element.classList.add('fa-check-square');
   }
   return afterchange(todo, i, boolean);

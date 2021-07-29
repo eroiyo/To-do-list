@@ -62,10 +62,10 @@ export class Todo { // the class todo is the one responsible to manipulate html
     trashcan.classList.add('hidden');
     trashcan.addEventListener('click', () => {
       this.todo = removeone(container.id, this.where); // add the individual element remove function
-    }); //using the element id
+    }); // using the element id
 
-    input.onfocus = () => { onfocus(input, last, trashcan); }; //add the function to display the
-    input.onblur = () => { offfocus(input, last, trashcan); }; //trashcan when focus in the element
+    input.onfocus = () => { onfocus(input, last, trashcan); }; // add the function to display the
+    input.onblur = () => { offfocus(input, last, trashcan); }; // trashcan when focus in
     text.classList.add('tdle-text-c');
     if (activity.completed === true) {
       input.classList.add('line');

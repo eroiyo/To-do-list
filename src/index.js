@@ -10,7 +10,7 @@ import { Todo } from './todo.js';
 
 const theBigList = document.querySelector('.to-do-list');
 const taskcreator = document.getElementById('new-item'); // get html elements variables to add
-const erase = document.querySelector('.erase');//functions for the buttons
+const erase = document.querySelector('.erase');// functions for the buttons
 const form = document.getElementById('form');
 
 makeContainer(theBigList); // making the list container a element that you can drag elements over
