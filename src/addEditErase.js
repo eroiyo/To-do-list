@@ -8,9 +8,9 @@ export function antiShowAll(element) {
 
 export function elimanateCompleteds() {
   const actualtodo = load();
-  const result = actualtodo.filter((activity) => (activity.completed === false)); // delete all the completed
-  for (let i = 0; i < result.length; i += 1) { // dutys from the list, and return a new one
-    result[i].index = i; // without completed acitivtys
+  const result = actualtodo.filter((activity) => (activity.completed === false)); // delete all
+  for (let i = 0; i < result.length; i += 1) { //completeds dutys from the list
+    result[i].index = i; // and return one without completed acitivtys
   }
   save(result);
   return result;

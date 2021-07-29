@@ -5,12 +5,12 @@ import { makeContainer } from './drag.js';
 import { addActivity, elimanateCompleteds } from './addEditErase.js';
 import { Todo } from './todo.js';
 
-// This is the main script of the application, here are used all the functions of the files to be used
-// in the application
+// This is the main script of the application, here are used all the functions of the files to be
+// used in the application
 
 const theBigList = document.querySelector('.to-do-list');
-const taskcreator = document.getElementById('new-item'); // get html elements variables to add functions for the buttons
-const erase = document.querySelector('.erase');
+const taskcreator = document.getElementById('new-item'); // get html elements variables to add
+const erase = document.querySelector('.erase');//functions for the buttons
 const form = document.getElementById('form');
 
 makeContainer(theBigList); // making the list container a element that you can drag elements over
