@@ -43,13 +43,14 @@ const drag = require('../src/drag.js');
     expect(a[0].description).toBe('i am the second element');
  })
 
-
-
-
  const result=data.load();
  const list = new todoObject.Todo();
  list.setTodo(result);
  list.setWhere(theBigList);
  list.showall();
-
- //
+ 
+ test('the clear all completed function', () => {
+  const result = addEditErase.elimanateCompleteds();
+  list.update(result);
+  expect(theBigList.childNodes.length).toBe(1);
+ })
