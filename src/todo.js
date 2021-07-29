@@ -35,7 +35,7 @@ export class Todo {          //the class todo is the one responsible to manipula
     const last = document.createElement('i');
     const trashcan = document.createElement('i');
 
-    makeDrageable(container); //tramsform the element in a draggeable element
+    makeDrageable(container, this.where); //tramsform the element in a draggeable element
     container.classList.add('tdl-element'); //classes are added
     container.draggable = true;
     container.id = i;

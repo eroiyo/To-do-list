@@ -22,24 +22,28 @@ function drag(element) {
   element.classList.remove('dragging'); //delete the class when stop holding the element
 }
 
-export function makeDrageable(element) {
+export function dragend(list){
   const newTodo = [];
-  element.addEventListener('dragstart', () => { hold(element); });
-  element.addEventListener('dragend', () => {  //giving the dragging classes when needed
-    drag(element);
-    const e = theBigList.querySelectorAll('.tdl-element');
-    let todo = load(); //load current localstorage information
+  //deleting the dragging classes when needed
+  const e = list.querySelectorAll('.tdl-element');
+  let todo = load(); //load current localstorage information
+  todo.sort(compare);
+  for (let i = 0; i < e.length; i += 1) { //compared the old information with the html actual positions
+    const otherId = parseInt(e[i].id, 10);
+    newTodo[i] = todo[otherId];
+    newTodo[i].index = i;
+    e[i].id = [i];
+  }
+  save(newTodo); //save the new list
+  return newTodo;// and return it for the todo object
+}
 
-    todo.sort(compare);
-    for (let i = 0; i < e.length; i += 1) { //compared the old information with the html actual positions
-      const otherId = parseInt(e[i].id, 10);
-      newTodo[i] = todo[otherId];
-      newTodo[i].index = i;
-      e[i].id = [i];
-    }
-    save(newTodo); //save the new list
-    return newTodo;// and return it for the todo object
-  });
+
+export function makeDrageable(element, list) {
+  element.addEventListener('dragstart', () => { hold(element); });
+  element.addEventListener('dragend', () =>{ 
+    drag(element);
+    dragend(list)});
 }
 
 export function makeContainer(tdl) {
